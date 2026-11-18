@@ -70,7 +70,6 @@ nav li a:hover{
 /*----------------------- Productos section*/
 .products{
   background-image: url("../images/curve.png");
-  max-height: 50px;
   background-size: cover;
   background-position: center top;
   padding:20% 5px;
@@ -80,7 +79,7 @@ nav li a:hover{
 
 .product{
   padding: var(--space);
-  margin-top: -240px;
+  margin-top: 0;
 }
 .product .content{
   background-color: var(--white-color);
@@ -100,10 +99,64 @@ nav li a:hover{
   border:0;
   cursor: pointer;
   border-radius: 2px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .main_button:hover{
   background-color: #5e9e22;
+  transform: translateY(1px);
+}
+
+/*--------------- Sistema de Grillas (Mobile-First) */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Separación limpia entre tarjetas */
+}
+
+/* Vista Base: Celulares (Ocupan todo el ancho) */
+.col-12 {
+    width: 100%;
+}
+
+/* Vista Desktop: Pantallas grandes*/
+@media (min-width: 768px) {
+    .col-md-4 {
+        width: calc(33.333% - 14px); /* Restamos el espacio proporcional del gap */
+    }
+
+    .products {
+        max-height: 50px;
+    }
+
+    .product {
+        margin-top: -240px;
+    }
+}
+
+/*--------------- Estilos de Tarjeta (Cards) */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: center;
+    
+    /* Regla de oro: La transición se declara en el estado base */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Se eleva 5 píxeles */
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1); /* Sombra más profunda */
 }
 
 /*---------------Lo mas Section*/
@@ -122,7 +175,7 @@ nav li a:hover{
 
 .parrafo{
     font-size: var(--normal);
-    text-align: left;
+    text-align: center;
 }
 .img_logo img{
   height: 100px;
