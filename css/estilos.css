@@ -107,7 +107,7 @@ nav li a:hover{
   transform: translateY(1px);
 }
 
-/*--------------- Sistema de Grillas (Mobile-First) */
+/*--------------- Sistema de Grillas(Mobile-First)  */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -118,18 +118,18 @@ nav li a:hover{
 .row {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Separación limpia entre tarjetas */
+    gap: 20px;
 }
 
-/* Vista Base: Celulares (Ocupan todo el ancho) */
+/* ------------------------ Vista Base: Celulares*/
 .col-12 {
     width: 100%;
 }
 
-/* Vista Desktop: Pantallas grandes*/
+/* ------------------------ Vista Desktop: Pantallas grandes*/
 @media (min-width: 768px) {
     .col-md-4 {
-        width: calc(33.333% - 14px); /* Restamos el espacio proporcional del gap */
+        width: calc(33.333% - 14px); 
     }
 
     .products {
@@ -141,22 +141,26 @@ nav li a:hover{
     }
 }
 
-/*--------------- Estilos de Tarjeta (Cards) */
+/*--------------- Estilos de tarjeta(Cards) */
 .card {
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-    padding: 20px;
+    padding: 20px 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     text-align: center;
-    
-    /* Regla de oro: La transición se declara en el estado base */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card .parrafo {
+    font-size: 11px;
+    display: inline-block;
+    text-align: left;
+}
+
 .card:hover {
-    transform: translateY(-5px); /* Se eleva 5 píxeles */
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1); /* Sombra más profunda */
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
 }
 
 /*---------------Lo mas Section*/
